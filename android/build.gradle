@@ -56,7 +56,7 @@ android {
 void cloneThirdPartyRepo(String name, String uri, String commit) {
     def dirPath = "$projectDir/third_party/$name"
     def dir = new File(dirPath)
-    org.eclipse.jgit.api.Git repo;
+//    org.eclipse.jgit.api.Git repo;
 
 //    if (dir.exists()) {
 //        repo = org.eclipse.jgit.api.Git.open(dir)
@@ -70,7 +70,7 @@ void cloneThirdPartyRepo(String name, String uri, String commit) {
 
     if (!dir.exists()) {
         dir.mkdirs()
-        repo =
+        def repo =
                 Git.cloneRepository()
                         .setDirectory(dir)
                         .setURI(uri)
@@ -85,7 +85,7 @@ void cloneThirdPartyRepo(String name, String uri, String commit) {
 }
 
 task cloneThirdPartyRepos {
-    cloneThirdPartyRepo('AudioKit', 'https://github.com/AudioKit/AudioKit', '818ee7f9e4b00627b9959de8e6b73c47f8b3cd09')
+    cloneThirdPartyRepo('AudioKit', 'https://github.com/AudioKit/AudioKit', 'a3a1405c906262588e27c445a7b1f4ad7e3eade3')
     cloneThirdPartyRepo('libnyquist', 'https://github.com/ddiakopoulos/libnyquist.git', '244afdd52e8fc5bc0396cbcd9437b2d74271509f')
     cloneThirdPartyRepo('oboe', 'https://github.com/google/oboe', 'd25993c5dbe4750cd8d51a3729b6def6f9d20d77')
     cloneThirdPartyRepo('TinySoundFont', 'https://github.com/schellingb/TinySoundFont.git', 'bf574519e601202c3a9d27a74f345921277eed39')
