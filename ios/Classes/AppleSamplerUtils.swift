@@ -24,7 +24,7 @@ func getSoundFontURL(avAudioUnit: AVAudioUnit) -> CFString {
 
 func loadSoundFont(avAudioUnit: AVAudioUnit, soundFontURL: URL, presetIndex: Int32) {
     let audioUnit = avAudioUnit.audioUnit
-    var mutableSoundFontURL = soundFontURL
+    var mutableSoundFontURL = soundFontURL as NSURL
     
     // Load SoundFont
     var result = AudioUnitSetProperty(audioUnit,
