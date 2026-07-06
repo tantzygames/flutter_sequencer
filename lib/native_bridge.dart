@@ -34,7 +34,7 @@ final nAddTrackSampler = nativeLib.lookupFunction<
 
 final nAddSampleToSampler = nativeLib.lookupFunction<
   Void Function(Int32, Pointer<Utf8>, Int8, Int32, Float, Int32, Int32, Int32, Int32, Int8, Float, Float, Float, Float, Int64),
-  void Function(int, Pointer<Utf8>, int, int?, double?, int?, int?, int?, int?, int, double?, double?, double?, double?, int)>('add_sample_to_sampler');
+  void Function(int, Pointer<Utf8>, int, int, double, int, int, int, int, int, double, double, double, double, int)>('add_sample_to_sampler');
 
 final nBuildKeyMap = nativeLib.lookupFunction<
   Void Function(Int32, Int64),
@@ -46,11 +46,11 @@ final nAddTrackSf2 = nativeLib.lookupFunction<
 
 final nRemoveTrack = nativeLib.lookupFunction<
   Void Function(Int32),
-  void Function(int?)>('remove_track');
+  void Function(int)>('remove_track');
 
 final nResetTrack = nativeLib.lookupFunction<
   Void Function(Int32),
-  void Function(int?)>('reset_track');
+  void Function(int)>('reset_track');
 
 final nGetPosition = nativeLib.lookupFunction<
   Uint32 Function(),
@@ -62,7 +62,7 @@ final nSetTrackGain = nativeLib.lookupFunction<
 
 final nGetTrackVolume = nativeLib.lookupFunction<
   Float Function(Int32),
-  double Function(int?)>('get_track_volume');
+  double Function(int)>('get_track_volume');
 
 final nGetLastRenderTimeUs = nativeLib.lookupFunction<
   Uint64 Function(),
@@ -70,19 +70,19 @@ final nGetLastRenderTimeUs = nativeLib.lookupFunction<
 
 final nGetBufferAvailableCount = nativeLib.lookupFunction<
   Uint32 Function(Int32),
-  int Function(int?)>('get_buffer_available_count');
+  int Function(int)>('get_buffer_available_count');
 
 final nHandleEventsNow = nativeLib.lookupFunction<
   Uint32 Function(Int32?, Pointer<Uint8>?, Uint32),
-  int Function(int?, Pointer<Uint8>?, int)>('handle_events_now');
+  int Function(int, Pointer<Uint8>?, int)>('handle_events_now');
 
 final nScheduleEvents = nativeLib.lookupFunction<
   Uint32 Function(Int32?, Pointer<Uint8>?, Uint32),
-  int Function(int?, Pointer<Uint8>?, int)>('schedule_events');
+  int Function(int, Pointer<Uint8>?, int)>('schedule_events');
 
 final nClearEvents = nativeLib.lookupFunction<
   Void Function(Int32, Uint32),
-  void Function(int?, int?)>('clear_events');
+  void Function(int, int)>('clear_events');
 
 final nPlay = nativeLib.lookupFunction<
   Void Function(),

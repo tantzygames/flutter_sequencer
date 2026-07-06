@@ -154,14 +154,14 @@ Future<SfzParseResult> parseSfz(String sfzFilename, bool isAsset) async {
         SampleDescriptor(
           filename: sampleAbsolutePath,
           isAsset: isAsset,
-          noteNumber: state.noteNumber,
-          minimumNoteNumber: state.minimumNoteNumber,
-          maximumNoteNumber: state.maximumNoteNumber,
-          minimumVelocity: state.minimumVelocity,
-          maximumVelocity: state.maximumVelocity,
+          noteNumber: state.noteNumber ?? 0,
+          minimumNoteNumber: state.minimumNoteNumber ?? 0,
+          maximumNoteNumber: state.maximumNoteNumber ?? 0,
+          minimumVelocity: state.minimumVelocity ?? 0,
+          maximumVelocity: state.maximumVelocity ?? 0,
           isLooping: state.loopMode != null,
-          loopStartPoint: state.loopStartPoint,
-          loopEndPoint: state.loopEndPoint,
+          loopStartPoint: state.loopStartPoint ?? 0,
+          loopEndPoint: state.loopEndPoint ?? 0,
         ));
     }
   }
